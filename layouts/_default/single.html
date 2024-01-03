@@ -1,0 +1,43 @@
+{{ define "title"}} {{ .Title}} {{end}}
+
+{{ define "main" }}
+<div class="back">
+  <a href="{{ "" | absURL}}">&lt; Back</a>
+</div>
+<div class="flex">
+  <div class="w-1/5">
+    <ul>
+      Navigation
+    </ul>
+  </div>
+  <div class="w-4/5">
+    <article class="px-3">
+      <section class="aria-title py-2 border-spacing-3 border-b-2 border-gray-100">
+        <h1 class="text-5xl">{{ .Title }}</h1>
+        <h3 class="text-1xl text-bold italic">Updated At: {{ .Params.EffectiveDate }}</h3>
+      </section>
+      <div class="flex-wrap">
+        {{ .Content }}
+      </div>
+    </section>
+    <section class="mt-3 p-3 border-spacing-2 border-t-2 border-gray-400">
+      <p>
+        Web address: <a href="{{ .Permalink }}" class="text-bold text-blue-400">{{ .Permalink }}</a>
+      </p>
+
+      <p>
+        Date of publication: {{ .Params.PublicationDate }}
+      </p>
+
+      <p>
+        Effective Date: {{ .Params.EffectiveDate }}
+      </p>
+    </section>
+  </div>
+</div>
+
+
+{{ end }}
+{{ define "footer" }}
+{{ partial "footer" .}}
+{{ end }}

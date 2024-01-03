@@ -1,0 +1,22 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "main"}}
+
+<section class="p-3">
+<h1 class="text-3xl text-bold">Available Documentation</h1>
+
+<ul class="list-unstyled" id="pages-titles">
+    {{ range .Paginator.Pages.ByWeight }} 
+      <li itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="title text-1xl">
+            <a href="{{ .Permalink }}" class="fill-inherit py-2" itemprop="headline">{{ .Title }}</a>
+        </h2>
+        {{ if .Description }}
+        <p itemprop="about">{{ .Description }}</p>
+        {{ end }}
+        <hr>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+{{ define "footer"}} {{ partial "footer" .}} {{end}}

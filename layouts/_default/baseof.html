@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  {{ hugo.Generator }}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+  {{ with .Description }}
+  <meta name="description" content="{{ . }}"> {{ end }}
+  <!-- noindex meta -->
+  {{ $default_noindex_kinds := slice "section" "taxonomy" "taxonomyTerm" }}
+  {{ $noindex_kinds := .Site.Params.noindex_kinds | default $default_noindex_kinds }}
+  {{ $is_noindex_true := and (isset .Params "noindex") .Params.noindex }}
+  {{ if or (in $noindex_kinds .Kind) ($is_noindex_true) }}
+  <meta name="robots" content="noindex">
+  {{ end }}
+
+
+  {{ with .OutputFormats.Get "RSS" }} <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ site.Title }}" /> {{ end }}
+
+  <link rel="canonical" href="{{ .Permalink }}"> {{ if (isset .Params "prev") }}
+  <link rel="prev" href="{{ .Params.prev }}"> {{ end }} {{ if (isset .Params "next") }}
+  <link rel="next" href="{{ .Params.next }}"> {{ end }}
+
+  <link rel="stylesheet" href="{{ "css/sites.css" | relURL }}">
+</head>
+
+
+<body>
+  <header class="border-b-2 border-spacing-2 p-3">
+    <a href="{{ "" | relURL }}">{{ .Site.Title }}</a><a href="{{ "" }}">&nbsp;{{ with .Page.Title }}| {{ .}} {{ end }} </a> 
+    
+    {{ block "header" . }}{{ end }}
+  </header>
+  <main class="main-content p-3">
+      {{ block "main" . }}{{ end }}
+  </main>
+  <footer>{{ block "footer" . }}{{ end }}</footer>
+</body>
+
+</html>

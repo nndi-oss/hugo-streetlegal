@@ -1,0 +1,31 @@
+name = "hugo-streetlegal"
+license = "MIT"
+version = "0.0.1"
+licenselink = "https://github.com/nndi-oss/streetlegal-theme/main/LICENSE.md"
+description = "streetlegal theme for Hugo for NNDI"
+homepage = "https://github.com/nndi-oss/streetlegal-theme"
+tags = ["responsive", "ridgeway", "documentation", "landing", "blog", "themes", "professional", "modern"]
+features = ["Minimalism","Mobile-first Design",
+  "Responsive Design",
+  "Horizontal Rhythm",
+  "Typography",
+  "Google Analytics",
+  "Disqus Commenting",
+  "OpenGraph support",
+  "Schema Structured Data",
+  "Paginated Lists",
+  "Reading Time",
+  "Last Modified time",
+  "Word Count",
+  "Related Posts",
+  "Block Templates",
+  "Table of Contents",
+  "SEO Site Verification"]
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.84.0"
+[author]
+  name = "NNDI Ltd"
+  homepage = "https://nndi.cloud/oss/"
+ 
