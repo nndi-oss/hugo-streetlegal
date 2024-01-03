@@ -6,9 +6,7 @@
 </div>
 <div class="flex">
   <div class="w-1/5">
-    <ul>
-      Navigation
-    </ul>
+    {{ partial "toc" .}}
   </div>
   <div class="w-4/5">
     <article class="px-3">
@@ -16,7 +14,7 @@
         <h1 class="text-5xl">{{ .Title }}</h1>
         <h3 class="text-1xl text-bold italic">Updated At: {{ .Params.EffectiveDate }}</h3>
       </section>
-      <div class="flex-wrap">
+      <div class="flex-wrap doc-content">
         {{ .Content }}
       </div>
     </section>

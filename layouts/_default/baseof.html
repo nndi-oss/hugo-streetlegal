@@ -25,7 +25,10 @@
   <link rel="prev" href="{{ .Params.prev }}"> {{ end }} {{ if (isset .Params "next") }}
   <link rel="next" href="{{ .Params.next }}"> {{ end }}
 
+  <link rel="stylesheet" href="{{ "css/tocbot.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/sites.css" | relURL }}">
+
+  <script type="text/javascript" src="{{ "js/tocbot.min.js" | absURL }}"></script>
 </head>
 
 

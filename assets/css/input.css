@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.doc-content h1,
+.doc-content h2,
+.doc-content h3 {
+    @apply text-3xl font-bold mt-2 mb-2;
+}
