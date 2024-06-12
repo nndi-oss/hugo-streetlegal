@@ -2,18 +2,19 @@
 {{ define "main"}}
 
 <section class="p-3">
-<h1 class="text-3xl text-bold">Available Documentation</h1>
+<h1 class="text-3xl text-bold border-b-2">Available Documentation</h1>
 
 <ul class="list-unstyled" id="pages-titles">
     {{ range .Paginator.Pages.ByWeight }} 
-      <li itemscope itemtype="http://schema.org/CreativeWork">
-        <h2 class="title text-1xl">
-            <a href="{{ .Permalink }}" class="fill-inherit py-2" itemprop="headline">{{ .Title }}</a>
+      <li class="p-2 border-b-2">
+        <a href="{{ .Permalink }}" class="w-full fill-inherit py-2" itemprop="headline">
+        <h2 class="title text-1xl hover:font-bold hover:text-gray-900">
+            {{ .Title }}</a>
         </h2>
         {{ if .Description }}
         <p itemprop="about">{{ .Description }}</p>
         {{ end }}
-        <hr>
+        </a>
       </li>
     {{ end }}
   </ul>

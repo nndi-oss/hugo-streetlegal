@@ -33,9 +33,9 @@
 
 
 <body>
-  <header class="border-b-2 border-spacing-2 p-3">
-    <a href="{{ "" | relURL }}">{{ .Site.Title }}</a><a href="{{ "" }}">&nbsp;{{ with .Page.Title }}| {{ .}} {{ end }} </a> 
-    
+  <header class="border-b-2 border-b-slate-300 border-spacing-2 p-3 font-bold bg-gray-50 ">
+    <a href="{{ "" | relURL }}" class="w-1/4">{{ .Site.Title }}</a>
+    <a href="{{ "" }}" class="w-3/4">&nbsp;{{ with .Page.Title }}| {{ .}} {{ end }} </a> 
     {{ block "header" . }}{{ end }}
   </header>
   <main class="main-content p-3">
